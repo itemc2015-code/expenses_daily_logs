@@ -1,16 +1,51 @@
 [
     {
         "No": 1,
-        "type": "expense",
-        "Description": "meralco",
-        "Amount": 54545,
+        "type": "income",
+        "Description": "raket1",
+        "Amount": 4000,
         "Date": "2025-10-28"
     },
     {
         "No": 2,
+        "type": "expense",
+        "Description": "meralco",
+        "Amount": 2000,
+        "Date": "2025-10-28"
+    },
+    {
+        "No": 3,
         "type": "income",
-        "Description": "salaray",
-        "Amount": 343,
+        "Description": "raket2",
+        "Amount": 9000,
+        "Date": "2025-10-28"
+    },
+    {
+        "No": 4,
+        "type": "expense",
+        "Description": "water bill",
+        "Amount": 500,
+        "Date": "2025-10-28"
+    },
+    {
+        "No": 5,
+        "type": "expense",
+        "Description": "water bill",
+        "Amount": 500,
+        "Date": "2025-10-28"
+    },
+    {
+        "No": 6,
+        "type": "income",
+        "Description": "raket4",
+        "Amount": 7000,
+        "Date": "2025-10-28"
+    },
+    {
+        "No": 7,
+        "type": "expense",
+        "Description": "food",
+        "Amount": 2000,
         "Date": "2025-10-28"
     }
 ]
