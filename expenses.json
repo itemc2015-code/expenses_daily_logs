@@ -47,5 +47,26 @@
         "Description": "food",
         "Amount": 2000,
         "Date": "2025-10-28"
+    },
+    {
+        "No": 8,
+        "type": "income",
+        "Description": "raket20",
+        "Amount": 5000,
+        "Date": "2025-10-28"
+    },
+    {
+        "No": 9,
+        "type": "income",
+        "Description": "raket23",
+        "Amount": 7000,
+        "Date": "2025-10-28"
+    },
+    {
+        "No": 10,
+        "type": "expense",
+        "Description": "meralco2",
+        "Amount": 6000,
+        "Date": "2025-10-28"
     }
 ]

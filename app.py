@@ -12,7 +12,7 @@ class Expenses:
 
     def display(self):
         print('======= DAILY EXPENSES LOG =======')
-        print('1. Income\n2. Expenses')
+        print('1. Income\n2. Expenses\n3. View logs')
 
     def user_input(self):
             selected_number = {'1':'Income','2':'Expense'}
@@ -43,9 +43,15 @@ class Expenses:
                         break
                     except ValueError:
                         print('Invalid amount')
+            elif self.user_select == "3":
+                if hasattr(self,"view_total"):
+                    self.view_total()
+                else:
+                    print('No such a method')
             else:
                 print('Invalid selected')
                 self.display()
+                self.user_input()
                 print()
 
     def store(self):
@@ -54,9 +60,7 @@ class Expenses:
         try:
             with open(self.logs, 'r') as f:
                 self.temp_logs = json.load(f)
-            #print(self.temp_logs) ##just checking if storing a list
 
-            #for n, l in enumerate(self.temp_logs):
             new_entry = {"No":len(self.temp_logs)+1, "type":self.type_choosen ,"Description":self.user_description, "Amount":self.user_amount, "Date":self.datetoday}
             self.temp_logs.append(new_entry)
 
@@ -79,8 +83,18 @@ class Expenses:
             else:
                 print('Exiting....')
 
+class Calculate(Expenses):
+    def view_total(self):
+        with open(self.logs, 'r') as f:
+            self.temp_logs = json.load(f)
 
-user = Expenses('description=','amount=')
+        total_income = sum(l['Amount'] for l in self.temp_logs if l['type'] == 'income' )
+        total_expenses = sum(l['Amount'] for l in self.temp_logs if l['type'] == 'expense')
+
+        print(f'Total Income: ${total_income}')
+        print(f'Total Income: ${total_expenses}')
+
+user = Calculate('description=','amount=')
 user.display()
 user.user_input()
 
