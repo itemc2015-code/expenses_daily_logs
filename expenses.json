@@ -1,0 +1,16 @@
+[
+    {
+        "No": 1,
+        "type": "expense",
+        "Description": "meralco",
+        "Amount": 54545,
+        "Date": "2025-10-28"
+    },
+    {
+        "No": 2,
+        "type": "income",
+        "Description": "salaray",
+        "Amount": 343,
+        "Date": "2025-10-28"
+    }
+]
