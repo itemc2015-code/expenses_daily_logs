@@ -17,7 +17,6 @@ class Expenses:
     def user_input(self):
             selected_number = {'1':'Income','2':'Expense'}
             self.user_select = input('> ')
-            #print(f'{"Income" if self.user_select == "1" else "Expense"} selected')
 
             if self.user_select == "1":
                 print(f'{selected_number["1"]} selected')
@@ -91,8 +90,15 @@ class Calculate(Expenses):
         total_income = sum(l['Amount'] for l in self.temp_logs if l['type'] == 'income' )
         total_expenses = sum(l['Amount'] for l in self.temp_logs if l['type'] == 'expense')
 
-        print(f'Total Income: ${total_income}')
-        print(f'Total Income: ${total_expenses}')
+        print('===== VIEW DAILY EXPENSES LOG =====')
+        print('Type'.rjust(10),'  |','Amount'.rjust(8),'  |','Date'.rjust(7))
+        for items in self.temp_logs:
+            print(f"{items['No']:<4} {items['type']:<9} ${items['Amount']:<10,.2f} {items['Date']}")
+
+        print()
+        print(f'Total Income: ${total_income:,.2f}')
+        print(f'Total Expenses: ${total_expenses:,.2f}')
+        print(f'Grand total: ${total_expenses+total_income:,.2f}')
 
 user = Calculate('description=','amount=')
 user.display()
